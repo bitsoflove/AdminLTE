@@ -32,6 +32,14 @@
                     @endforeach
                 </ul>
             </li>
+
+
+            <?php if (is_module_enabled('Site')): ?>
+                @include('site::partials.dropdown')
+            <?php endif; ?>
+
+
+
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
