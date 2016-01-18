@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    @yield('title')
+
+    <link media="all" type="text/css" rel="stylesheet" href="/themes/diekeure/styles/sites/{{ \Modules\Site\Facades\Site::current()->slug }}/screen.css">
 </head>
 <body>
 
