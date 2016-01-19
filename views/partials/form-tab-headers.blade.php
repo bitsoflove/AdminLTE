@@ -25,7 +25,10 @@
     <?php endif; ?>
 @else
     <ul class="nav nav-tabs">
-        @foreach(\Site::current()->siteLocales->lists('title', 'locale')->toArray() as $locale => $title)
+
+        <?php $theLocales = isset($locales) ? $locales : \Site::current()->siteLocales->lists('title', 'locale')->toArray(); ?>
+
+        @foreach($theLocales as $locale => $title)
             <?php $class = ''; ?>
             <?php foreach ($errors->getMessages() as $field => $messages): ?>
                     <?php if (substr($field, 0, strpos($field, ".")) == $locale) $class = 'error' ?>
