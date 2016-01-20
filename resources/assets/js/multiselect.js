@@ -1,2 +1,1 @@
 $('.multiselect').multiSelect();
-alert('binnen');
