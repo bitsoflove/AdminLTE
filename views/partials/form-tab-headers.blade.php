@@ -27,13 +27,14 @@
     <ul class="nav nav-tabs">
 
         <?php $theLocales = isset($locales) ? $locales : \Site::current()->siteLocales->lists('title', 'locale')->toArray(); ?>
+        <?php $theActiveLocale = isset($activeLocale) ? $activeLocale : App::getLocale(); ?>
 
         @foreach($theLocales as $locale => $title)
             <?php $class = ''; ?>
             <?php foreach ($errors->getMessages() as $field => $messages): ?>
                     <?php if (substr($field, 0, strpos($field, ".")) == $locale) $class = 'error' ?>
                 <?php endforeach ?>
-            <li class="{{ App::getLocale() == $locale ? 'active' : '' }} {{ $class }}">
+            <li class="{{ $theActiveLocale == $locale ? 'active' : '' }} {{ $class }}">
                 <a href="#tab_{{ $prefix.$locale }}" data-toggle="tab">{{ trans('core::core.tab.'.  $locale) }}</a>
             </li>
         @endforeach
