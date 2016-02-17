@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>
         @section('title')
-            @if( isset( \Modules\Site\Facades\Site::currentLocale()->title ))
+            @if( is_module_enabled('Site') && isset( \Modules\Site\Facades\Site::currentLocale()->title ))
                 {{ \Modules\Site\Facades\Site::currentLocale()->title }} | Admin
             @else
                 {{ Setting::get('core::site-name') }} | Admin
@@ -36,7 +36,7 @@
             {{ $sitename }}
             <?php endif; ?>
 
-            <?php if (isset(\Modules\Site\Facades\Site::currentLocale()->title)): ?>
+            <?php if (is_module_enabled('Site') && isset(\Modules\Site\Facades\Site::currentLocale()->title)): ?>
             {{ \Modules\Site\Facades\Site::currentLocale()->title }}
             <?php endif; ?>
         </a>
