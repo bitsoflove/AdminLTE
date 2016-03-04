@@ -46,6 +46,10 @@ footer.main-footer p.text-muted {
   background: #25272d;
 }
 
+.checkbox label {
+  margin-left: 20px;
+}
+
 .sidebar-menu .append {
   margin-top: -44px;
 }
